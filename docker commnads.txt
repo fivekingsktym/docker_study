@@ -1,0 +1,11 @@
+docker -v # checking version
+docker ps # showing details of running containers
+docker ps -a # showing details of all runned continers list
+
+sudo lshw
+lscpu
+lsb_release -a
+
+tutorials :-
+sudo docker run hello-world
+docker images

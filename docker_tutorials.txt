@@ -1,0 +1,9 @@
+Youtube Tutorial Reference : https://youtu.be/mcch7flKEZM
+
+docker -v # checking version
+
+tutorials :-
+sudo docker run hello-world # pull repository form docker hub 
+docker images # showing all images
+docker ps # showing details of running containers
+docker ps -a # showing details of all runned continers list
