@@ -52,7 +52,7 @@ docker logs <container_id>
 
 
 # running a custom docker file
-docker build -t container_name path
+docker build -t(flag_to_tag_the_image_name) <image_name> <path_of_dockerfiel>
 # example
 docker build -t getting-started .
 
