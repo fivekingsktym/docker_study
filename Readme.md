@@ -50,6 +50,12 @@ docker stop <container_id>
 # printing docker running logs
 docker logs <container_id>
 
+
+# running a custom docker file
+docker build -t container_name path
+# example
+docker build -t getting-started .
+
 ```
 
 
