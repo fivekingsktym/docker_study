@@ -12,6 +12,8 @@ docker ps -a #showing all current and previous runned containers
 docker container ls #showing current running containers
 docker container ls -a #showing all current and previous runned containers
 
+# downloading a container from dockerhub
+docker pull techtvm/mysql_techtvm
 
 # running a docker image ------------------
 # running in attach mode
@@ -21,7 +23,7 @@ docker run -d <image_name:version>
 
 <or>
 # run a container using their id
-docker start <container_id>
+docker start <container_name_or_id>
 # running a docker image ------------------
 
 
@@ -38,23 +40,41 @@ docker run -d -p 6000:6379 --name redis_fivekings redis
 
 
 # login to running docker container (like:- accessing to a remote system(os))
-docker execute -iterative_terminal shell_path
+docker execute -iterative_terminal <container_name_or_id> <shell_path>
 # example
+docker exec -it redis_abhi bash #bash will locate to root directory
 docker exec -it redis_abhi /bin/bash
 # exiting from loggined container or remote system
 "ctrl+d" or type "exit"
 
 # stoping a running container
-docker stop <container_id>
+docker stop <container_name_or_id>
+
+# stoping all running containers
+docker stop $(docker ps -q)
+
+# deleting all unused containers history from docker
+docker container prune
 
 # printing docker running logs
-docker logs <container_id>
+docker logs <container_name_or_id>
 
 
-# running a custom docker file
-docker build -t(flag_to_tag_the_image_name) <image_name> <path_of_dockerfiel>
+# building a custom docker file
+docker build -t(flag_to_tag_the_image_name) <image_name> <path_of_dockerfile>
 # example
 docker build -t getting-started .
+
+
+
+# creating a docker image in the root folder like env
+docker save -o filename.tar image_name
+docker load -i filename.tar
+docker run hello-world:latest
+
+# removing a docker image file
+docker rmi --force image_name_or_id
+
 
 ```
 
@@ -64,6 +84,10 @@ docker build -t getting-started .
 ```bash 
 pwd  #present working directory
 ls #listing contents inside a directory 
+
+lscpu # showing system details
+lsb_release -a # showing linux version
+
 cd # change directory
 touch file_name.extension #creating a file in linux
 
@@ -78,4 +102,15 @@ echo "print("hello world")" > sample.py
 # showing the contents from a file
 cat sample.py
 
+# elevate privileges and obtain a root or superuser access.
+# By default, if you execute su without specifying a username, it will switch to the root user.
+# <SuperUserDo> <Substitute User>
+sudo su
+
+
+
+# extrating tar file to a directory
+tar -xf <file_for_extraction.tar> -C <fullpath_or_folder_name>
+# example
+tar -xf php-crud-app.tar -C php-crud-app
 ```
