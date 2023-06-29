@@ -76,6 +76,48 @@ docker run hello-world:latest
 docker rmi --force image_name_or_id
 
 
+# network commands - start
+# creating network in docker
+docker create <name_of_network>
+# showing all networks
+docker network ls
+# others network commands
+connect     Connect a container to a network
+create      Create a network
+disconnect  Disconnect a container from a network
+inspect     Display detailed information on one or more networks
+ls          List networks
+prune       Remove all unused networks
+rm          Remove one or more networks
+# network commands - end
+
+```
+
+# How to use docker compose
+- check weather the docker-compose is properly installed in your system
+- Installation process in Ubuntu and Debian is as follows :-
+
+```bash
+# updating sudo
+sudo apt-get update
+# installing docker-compose
+sudo apt-get install docker-compose-plugin
+
+# checking docker-compose version
+docker compose version
+```
+
+## Running docker-compose file
+
+```bash
+# running a docker-compose
+docker-compose up -d
+
+# stoping a docker-compose
+docker-compose down # if the file name is docker-compose, 
+# or
+docker-compose down -f <filename>
+
 ```
 
 
