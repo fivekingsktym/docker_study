@@ -60,7 +60,7 @@ docker container prune
 docker logs <container_name_or_id>
 
 
-# building a custom docker file
+# building a custom docker file(Dockerfile with no extension)
 docker build -t(flag_to_tag_the_image_name) <image_name> <path_of_dockerfile>
 # example
 docker build -t getting-started .
@@ -75,6 +75,8 @@ docker run hello-world:latest
 # removing a docker image file
 docker rmi --force image_name_or_id
 
+# removing a docker container file
+docker rm <container_name_or_id>
 
 # network commands - start
 # creating network in docker

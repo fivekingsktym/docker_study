@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db: #name
+    image: techtvm/mysql_techtvm
+    container_name: db-new
+    restart: unless-stopped
+    environment: 
+      - MYSQL_ROOT_PASSWORD='Pass@123'
+    command: '--default-authentication-plugin=mysql_native_password'
+    ports:
+      - '3306:3306'
+
+    volumes:
+      - db:/var/lib/mysql/data #this is a named volume
+      
+    networks:
+      - app-network
+
+# give the all named volumes name
+volumes:
+  db:
