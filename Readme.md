@@ -131,6 +131,10 @@ ls #listing contents inside a directory
 
 lscpu # showing system details
 lsb_release -a # showing linux version
+or
+cat /etc/lsb-release # showing linux version
+or
+cat /etc/os-release # showing linux version and more
 
 cd # change directory
 touch file_name.extension #creating a file in linux

@@ -33,3 +33,32 @@ docker run -v name:<virtual_container_path>
 # example
 docker run -v name:/var/lib/mysql/data
 ```
+
+
+
+# Docker volume commands
+
+```bash
+# Checking where the docker volume datas are stored
+docker volume inspect <create_volume_name>
+# example
+docker volume inspect 9_and_10_video_docker_volumes_dbdata
+
+# terminal result
+[
+    {
+        "CreatedAt": "2023-07-02T10:49:13Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.project": "9_and_10_video_docker_volumes",
+            "com.docker.compose.version": "",
+            "com.docker.compose.volume": "dbdata"
+        },
+        "Mountpoint": "/workspace/.docker-root/volumes/9_and_10_video_docker_volumes_dbdata/_data",
+        "Name": "9_and_10_video_docker_volumes_dbdata",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+```
